@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 
 import Input from "./Input";
 import Button from "./Button";
-import useRegisterModal from "@/hooks/useRegisterModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 export default function RegisterModal() {
   const registerModal = useRegisterModal();

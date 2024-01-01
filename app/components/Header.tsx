@@ -4,8 +4,8 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 
 import Button from "./Button";
 import { twMerge } from "tailwind-merge";
-import useRegisterModal from "@/hooks/useRegisterModal";
-import useLoginModal from "@/hooks/useLoginModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 type Props = {
   children: React.ReactNode;

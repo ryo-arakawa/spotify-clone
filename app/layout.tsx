@@ -1,5 +1,5 @@
-import Player from "../components/Player";
-import Sidebar from "../components/Sidebar";
+import Player from "./components/Player";
+import Sidebar from "./components/Sidebar";
 import "./globals.css";
 import { Figtree } from "next/font/google";
 

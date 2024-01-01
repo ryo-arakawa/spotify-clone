@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 
 import Input from "./Input";
 import Button from "./Button";
-import useLoginModal from "@/hooks/useLoginModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 export default function LoginModal() {
   const loginModal = useLoginModal();
