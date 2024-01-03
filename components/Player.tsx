@@ -9,7 +9,7 @@ import LikeButton from "./LikeButton";
 const data = {
   name: "Liked Songs",
   image: "https://misc.scdn.co/liked-songs/liked-songs-64.png",
-  author: "Antonio",
+  author: "Ryo Arakawa",
 };
 
 export default function Player() {

@@ -1,12 +1,12 @@
-import MediaItem from "../components/MediaItem";
-import LikeButton from "../components/LikeButton";
-import Input from "../components/Input";
-import Header from "../components/Header";
+import MediaItem from "../../components/MediaItem";
+import LikeButton from "../../components/LikeButton";
+import Input from "../../components/Input";
+import Header from "../../components/Header";
 
 const data = {
   name: "Liked Songs",
   image: "https://misc.scdn.co/liked-songs/liked-songs-64.png",
-  author: "Antonio",
+  author: "Ryo Arakawa",
 };
 
 export default function Search() {

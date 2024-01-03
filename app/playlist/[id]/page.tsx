@@ -1,7 +1,7 @@
-import Playlist from "@/app/components/MediaItem";
 import Image from "next/image";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
+import MediaItem from "@/components/MediaItem";
 
 const data = {
   name: "Liked Songs",
@@ -9,7 +9,7 @@ const data = {
   author: "Ryo Arakawa",
 };
 
-export default function PlaylistId() {
+export default function MediaItemId() {
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <div className="h-fit bg-gradient-to-b from-emerald-800 p-6">
@@ -46,7 +46,7 @@ export default function PlaylistId() {
       <div className="flex flex-col gap-y-2 w-full p-6">
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -54,7 +54,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -62,7 +62,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -70,7 +70,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -78,7 +78,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -86,7 +86,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -94,7 +94,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -102,7 +102,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -110,7 +110,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
@@ -118,7 +118,7 @@ export default function PlaylistId() {
         </div>
         <div className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <Playlist {...data} />
+            <MediaItem {...data} />
           </div>
           <div>
             <AiOutlineHeart size={25} />
