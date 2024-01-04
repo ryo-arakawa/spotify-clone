@@ -2,28 +2,39 @@
 
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+
+import { Song } from "@/types";
+import useUploadModal from "@/hooks/useUploadModal";
+import { useUser } from "@/hooks/useUser";
+import useAuthModal from "@/hooks/useAuthModal";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
+import useOnPlay from "@/hooks/useOnPlay";
+
 import MediaItem from "./MediaItem";
-import { useRouter } from "next/navigation";
 
-const list = [
-  {
-    name: "Liked Songs",
-    image: "https://misc.scdn.co/liked-songs/liked-songs-64.png",
-    author: "Ryo",
-  },
-  {
-    name: "champagne & coke",
-    image: "https://i.scdn.co/image/ab67706c0000f8e481bcb4ae4198afa5a6135ff0",
-    author: "Ilke Kartal",
-  },
-  {
-    name: "My Playlist #1",
-    author: "Ryo",
-  },
-];
+interface LibraryProps {
+  songs: Song[];
+}
 
-export default function Library() {
-  const router = useRouter();
+const Library: React.FC<LibraryProps> = ({ songs }) => {
+  const { user, subscription } = useUser();
+  const uploadModal = useUploadModal();
+  const authModal = useAuthModal();
+  const subscribeModal = useSubscribeModal();
+
+  const onPlay = useOnPlay(songs);
+
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+
+    if (!subscription) {
+      return subscribeModal.onOpen();
+    }
+
+    return uploadModal.onOpen();
+  };
 
   return (
     <div className="flex flex-col">
@@ -33,19 +44,27 @@ export default function Library() {
           <p className="text-neutral-400 font-medium text-md">Your Library</p>
         </div>
         <AiOutlinePlus
+          onClick={onClick}
           size={20}
-          className="text-neutral-400 cursor-pointer hover:text-white transition"
+          className="
+            text-neutral-400
+            cursor-pointer
+            hover:text-white
+            transition
+          "
         />
       </div>
       <div className="flex flex-col gap-y-2 mt-4 px-3">
-        {list.map((item) => (
+        {songs.map((item) => (
           <MediaItem
-            onClick={() => router.push("/playlist/123")}
-            key={item.name}
-            {...item}
+            onClick={(id: string) => onPlay(id)}
+            key={item.id}
+            data={item}
           />
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default Library;
