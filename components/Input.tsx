@@ -1,13 +1,16 @@
+import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-type Props = React.InputHTMLAttributes<HTMLInputElement>;
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-export default function Input({ className, type, ...rest }: Props) {
-  return (
-    <input
-      type={type}
-      className={twMerge(
-        `
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, disabled, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={twMerge(
+          `
         flex
         w-full
         rounded-md
@@ -26,9 +29,17 @@ export default function Input({ className, type, ...rest }: Props) {
         disabled:opacity-50
         focus:outline-none
       `,
-        className
-      )}
-      {...rest}
-    />
-  );
-}
+          disabled && "opacity-75",
+          className
+        )}
+        disabled={disabled}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+
+Input.displayName = "Input";
+
+export default Input;

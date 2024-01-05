@@ -2,16 +2,19 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { twMerge } from "tailwind-merge";
 
-type Props = {
+interface SidebarItemProps {
   icon: IconType;
   label: string;
   active?: boolean;
   href: string;
-};
+}
 
-export default function SidebarItem(props: Props) {
-  const { icon: Icon, label, active, href } = props;
-
+const SidebarItem: React.FC<SidebarItemProps> = ({
+  icon: Icon,
+  label,
+  active,
+  href,
+}) => {
   return (
     <Link
       href={href}
@@ -29,8 +32,7 @@ export default function SidebarItem(props: Props) {
         hover:text-white
         transition
         text-neutral-400
-        py-1
-      `,
+        py-1`,
         active && "text-white"
       )}
     >
@@ -38,4 +40,6 @@ export default function SidebarItem(props: Props) {
       <p className="truncate w-100">{label}</p>
     </Link>
   );
-}
+};
+
+export default SidebarItem;

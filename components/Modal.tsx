@@ -1,15 +1,15 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { IoMdClose } from "react-icons/io";
 
-type Props = {
+interface ModalProps {
   isOpen: boolean;
   onChange: (open: boolean) => void;
   title: string;
   description: string;
   children: React.ReactNode;
-};
+}
 
-const Modal: React.FC<Props> = ({
+const Modal: React.FC<ModalProps> = ({
   isOpen,
   onChange,
   title,
