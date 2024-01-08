@@ -1,17 +1,15 @@
-import MediaItem from "./MediaItem";
-import {
-  AiFillStepBackward,
-  AiFillStepForward,
-  AiOutlineHeart,
-} from "react-icons/ai";
+import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { HiSpeakerWave } from "react-icons/hi2";
 import { BsPlayFill } from "react-icons/bs";
+
+import MediaItem from "./MediaItem";
 import Slider from "./Slider";
+import LikeButton from "./LikeButton";
 
 const data = {
   name: "Liked Songs",
   image: "https://misc.scdn.co/liked-songs/liked-songs-64.png",
-  author: "Ryo",
+  author: "Antonio",
 };
 
 export default function Player() {
@@ -21,7 +19,7 @@ export default function Player() {
         <div className="hidden md:flex w-full justify-start">
           <div className="flex items-center gap-x-4">
             <MediaItem {...data} />
-            <AiOutlineHeart size={25} />
+            <LikeButton />
           </div>
         </div>
 
