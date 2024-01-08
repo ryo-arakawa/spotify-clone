@@ -8,7 +8,9 @@ const nextConfig = {
       "i1.sndcdn.com",
       "media.pitchfork.com",
       "seed-mix-image.spotifycdn.com",
+      "tbvswgcbrilqlaxdsxii.supabase.co",
     ],
   },
 };
+
 module.exports = nextConfig;
