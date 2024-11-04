@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import { clerkMiddleware } from "@clerk/clerk-express";
 
 import { connectDB } from "./lib/db.js";
 
@@ -15,7 +16,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(express.json());
+app.use(express.json()); // middleware to parse json
+app.use(clerkMiddleware()); // middleware to handle clerk authentication
+
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
